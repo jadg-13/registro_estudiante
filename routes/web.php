@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
+use App\Http\Controllers\EmailController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +45,8 @@ Route::put('/carreras/{carrera}',
 Route::delete('/carreras/{carrera}',
 [CarreraController::class, 'destroy'])
 ->name('carreras.destroy');
+
+Route::get('/carreras/sendemail',
+[EmailController::class, 'sendEmail'])
+->name('carreras.sendemail');
 

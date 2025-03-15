@@ -4,6 +4,8 @@
     <div class="container">
         <h1>Carreras</h1>
         <a href="{{ route('carreras.create') }}" class="btn btn-outline-primary">Crear Carrera</a>
+        <a href="{{route('carreras.sendemail')}}" class="btn btn-outline-info"
+        > Enviar Reporte</a>
     </div>
 
     <div class="container mt-2">

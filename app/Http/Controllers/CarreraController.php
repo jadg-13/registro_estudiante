@@ -61,4 +61,9 @@ class CarreraController extends Controller
         //redireccionar a la vista principal
         return redirect()->route('carreras.index');
     }
+
+    public function sendEmail(){
+        $carreras = Carrera::orderBy('nombre_carrera')->get();
+        return view('emails.carreras', compact('carreras'));
+    }
 }
