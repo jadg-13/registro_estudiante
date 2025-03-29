@@ -37,6 +37,11 @@
                             href="{{ route('carreras.index') }}">
                             {{ __('Carreras') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" 
+                            href="{{ route('estudiantes.index') }}">
+                            {{ __('Estudiantes') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

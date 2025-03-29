@@ -14,4 +14,9 @@ class Carrera extends Model
         'codigo_carrera',
         'descripcion_carrera'
     ];
+
+    public function estudiantes()
+    {
+        return $this->hasMany(Estudiante::class, 'id_carrera');
+    }
 }

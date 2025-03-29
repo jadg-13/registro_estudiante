@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\EstudianteController;
 
 
 /*
@@ -50,3 +51,27 @@ Route::get('/carreras/sendemail',
 [EmailController::class, 'sendEmail'])
 ->name('carreras.sendemail');
 
+/*Rutas estudiantes logeadas*/
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/estudiantes', [EstudianteController::class, 'index'])
+        ->name('estudiantes.index');
+
+    Route::get('/estudiantes/create', [EstudianteController::class, 'create'])
+        ->name('estudiantes.create');
+
+    Route::post('/estudiantes', [EstudianteController::class, 'store'])
+        ->name('estudiantes.store');
+
+    Route::get('/estudiantes/{estudiante}/edit', [EstudianteController::class, 'edit'])
+        ->name('estudiantes.edit');
+
+    Route::put('/estudiantes/{estudiante}', [EstudianteController::class, 'update'])
+        ->name('estudiantes.update');
+
+    Route::delete('/estudiantes/{estudiante}', [EstudianteController::class, 'destroy'])
+        ->name('estudiantes.destroy');
+
+    Route::get('/estudiantes/{estudiante}', [EstudianteController::class, 'show'])
+        ->name('estudiantes.show');
+});
